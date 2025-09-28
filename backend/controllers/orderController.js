@@ -3,10 +3,10 @@ import productModel from '../models/productModel.js';
 import userModel from '../models/userModel.js';
 import { incrementCouponUsage } from './couponController.js';
 import { sendDownloadEmail } from '../services/emailService.js';
-import * as paypal from '@paypal/checkout-server-sdk';
+import paypal from '@paypal/checkout-server-sdk';
 
 // PayPal environment setup
-const environment = process.env.PAYPAL_MODE === 'live' 
+const environment = process.env.NODE_ENV === 'production' 
     ? new paypal.core.LiveEnvironment(process.env.PAYPAL_CLIENT_ID, process.env.PAYPAL_CLIENT_SECRET)
     : new paypal.core.SandboxEnvironment(process.env.PAYPAL_CLIENT_ID, process.env.PAYPAL_CLIENT_SECRET);
 

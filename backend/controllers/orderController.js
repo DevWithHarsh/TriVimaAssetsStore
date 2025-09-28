@@ -96,7 +96,7 @@ const placeOrderPayPal = async (req, res) => {
                 soft_descriptor: '3D Assets Store'
             }],
             application_context: {
-                brand_name: 'DharmaDristi 3D Assets',
+                brand_name: 'TriVima Studio',
                 landing_page: 'BILLING',
                 user_action: 'PAY_NOW',
                 return_url: `${process.env.FRONTEND_URL}/orders`,

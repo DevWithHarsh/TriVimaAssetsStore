@@ -3,6 +3,7 @@ import { assets } from '../assets/assets';
 import { Link, NavLink } from 'react-router-dom';
 import { ShopContext } from '../context/ShopContext';
 
+
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
@@ -36,15 +37,14 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="bg-[#1a1d24] text-white px-4 sm:px-8 py-4 sticky top-0 z-50 border-b border-gray-700">
-      <div className="flex items-center justify-between">
+    <nav className=" backdrop-blur-md 
+     text-white px-4 sm:px-8 py-4 sticky top-0 z-50">
+      <div className="flex items-center justify-between ">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
-          <div className="w-8 h-8 bg-[#3dd68c] rounded-full flex items-center justify-center">
-            <span className="text-black font-bold text-xl">3D</span>
-          </div>
-          <span className="text-xl font-bold hidden sm:block">3D Assets Store</span>
+          <img src={assets.logo} alt="Logo" className="h-12" />
         </Link>
+
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center space-x-8">
@@ -59,9 +59,9 @@ const Navbar = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            
+
             {showProductsDropdown && (
-              <div 
+              <div
                 className="absolute top-full left-0 mt-2 w-80 bg-[#2a2d35] border border-gray-600 rounded-lg shadow-xl z-50"
                 onMouseLeave={() => setShowProductsDropdown(false)}
               >
@@ -71,7 +71,7 @@ const Navbar = () => {
                       View all products
                     </button>
                   </div>
-                  
+
                   <div className="grid grid-cols-1 gap-2">
                     <div className="p-2 hover:bg-gray-700 rounded cursor-pointer">
                       <div className="flex items-center gap-3">
@@ -84,7 +84,7 @@ const Navbar = () => {
                         </svg>
                       </div>
                     </div>
-                    
+
                     <div className="p-2 hover:bg-gray-700 rounded cursor-pointer">
                       <div className="flex items-center gap-3">
                         <div className="w-6 h-6 bg-orange-500 rounded flex items-center justify-center">
@@ -96,7 +96,7 @@ const Navbar = () => {
                         </svg>
                       </div>
                     </div>
-                    
+
                     <div className="p-2 hover:bg-gray-700 rounded cursor-pointer">
                       <div className="flex items-center gap-3">
                         <div className="w-6 h-6 bg-blue-600 rounded flex items-center justify-center">
@@ -237,8 +237,8 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {visible && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 lg:hidden">
-          <div className="fixed right-0 top-0 h-full w-80 bg-[#1a1d24] border-l border-gray-700">
+        <div className="fixed inset-0 bg-opacity-50 z-50 lg:hidden">
+          <div className="fixed right-0 top-0 h-full w-80 bg-[#1a1d24]">
             <div className="p-4 border-b border-gray-700">
               <div className="flex items-center justify-between">
                 <span className="text-lg font-bold">Menu</span>
@@ -252,58 +252,58 @@ const Navbar = () => {
                 </button>
               </div>
             </div>
-            
-            <div className="p-4 space-y-4">
-              <NavLink 
-                to="/categories" 
+
+            <div className="p-4 space-y-4 bg-[#5f667c]">
+              <NavLink
+                to="/categories"
                 onClick={() => setVisible(false)}
-                className="block py-2 text-gray-300 hover:text-[#3dd68c] transition-colors"
+                className="block py-2 pl-2 text-gray-300 hover:text-[#3dd68c] transition-colors"
               >
                 Products
               </NavLink>
-              <NavLink 
-                to="/community" 
+              <NavLink
+                to="/community"
                 onClick={() => setVisible(false)}
-                className="block py-2 text-gray-300 hover:text-[#3dd68c] transition-colors"
+                className="block py-2 pl-2 text-gray-300 hover:text-[#3dd68c] transition-colors"
               >
                 Community
               </NavLink>
-              <NavLink 
-                to="/help" 
+              <NavLink
+                to="/help"
                 onClick={() => setVisible(false)}
-                className="block py-2 text-gray-300 hover:text-[#3dd68c] transition-colors"
+                className="block py-2 pl-2 text-gray-300 hover:text-[#3dd68c] transition-colors"
               >
                 Help
               </NavLink>
-              <NavLink 
-                to="/about" 
+              <NavLink
+                to="/about"
                 onClick={() => setVisible(false)}
-                className="block py-2 text-gray-300 hover:text-[#3dd68c] transition-colors"
+                className="block py-2 pl-2 text-gray-300 hover:text-[#3dd68c] transition-colors"
               >
                 About
               </NavLink>
-              
+
               {token && (
                 <>
                   <hr className="border-gray-600" />
-                  <NavLink 
-                    to="/orders" 
+                  <NavLink
+                    to="/orders"
                     onClick={() => setVisible(false)}
-                    className="block py-2 text-gray-300 hover:text-[#3dd68c] transition-colors"
+                    className="block py-2 pl-2 text-gray-300 hover:text-[#3dd68c] transition-colors"
                   >
                     My Orders
                   </NavLink>
-                  <NavLink 
-                    to="/write-review" 
+                  <NavLink
+                    to="/write-review"
                     onClick={() => setVisible(false)}
-                    className="block py-2 text-gray-300 hover:text-[#3dd68c] transition-colors"
+                    className="block py-2 pl-2 text-gray-300 hover:text-[#3dd68c] transition-colors"
                   >
                     Write Review
                   </NavLink>
-                  <NavLink 
-                    to="/my-reviews" 
+                  <NavLink
+                    to="/my-reviews"
                     onClick={() => setVisible(false)}
-                    className="block py-2 text-gray-300 hover:text-[#3dd68c] transition-colors"
+                    className="block py-2 pl-2 text-gray-300 hover:text-[#3dd68c] transition-colors"
                   >
                     My Reviews
                   </NavLink>
@@ -312,7 +312,7 @@ const Navbar = () => {
                       logout();
                       setVisible(false);
                     }}
-                    className="block w-full text-left py-2 text-red-400 hover:text-red-300 transition-colors"
+                    className="block w-full text-left py-2 pl-2 text-red-400 hover:text-red-300 transition-colors"
                   >
                     Logout
                   </button>

@@ -92,13 +92,13 @@ const ProductItem = ({ id, image, name, price, stock, zipFile, zipFileType, aver
 
           {/* Hover Overlay */}
           {isHovered && stock > 0 && (
-            <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-              <button
+            <div className="absolute inset-0 bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+              {/* <button
                 onClick={handleBuyNow}
                 className="bg-[#3dd68c] text-black px-4 py-2 rounded font-bold hover:bg-[#2bc77a] transition-colors"
               >
                 Add to Cart
-              </button>
+              </button> */}
             </div>
           )}
         </div>

@@ -18,7 +18,7 @@ a.active hr{
 
 @media (max-width:640px) {
   a.active{
-    background-color: #ffffff;
+    background-color: #4fbaa0;
     color: white;
   }
 }

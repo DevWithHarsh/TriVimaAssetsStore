@@ -18,16 +18,14 @@ const port = process.env.PORT || 4000
 app.use(cors({
   origin: [
     'https://tri-vima-assets-store-frontend.vercel.app',
-    'https://tri-vima-assets-store-backend.vercel.app',
-    'http://localhost:5173',  // For local development
-    'http://localhost:3000',  // For local development
-    'http://localhost:5174'   // For local admin development
+    'http://localhost:5173',
+    'http://localhost:3000'
   ],
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  methods: ['GET','POST','PUT','DELETE','OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'token'],
-  exposedHeaders: ['Authorization', 'token']
-}))
+  credentials: true,   // only if you use cookies
+}));
+
 
 // Connect DB + Cloudinary
 connectDB()

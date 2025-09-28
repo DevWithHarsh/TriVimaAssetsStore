@@ -17,10 +17,8 @@ const port = process.env.PORT || 4000
 // CORS configuration
 app.use(cors({
   origin: [
-    'https://www.dharmadristi.com',
-    'https://dharmadristi.com',
-    'https://dharmadristiadmin.vercel.app',
-    'https://dharmadristibackend.vercel.app',
+    'https://tri-vima-assets-store-frontend.vercel.app/',
+    'https://tri-vima-assets-store-backend.vercel.app/',
     'http://localhost:5173',  // For local development
     'http://localhost:3000',  // For local development
     'http://localhost:5174'   // For local admin development
